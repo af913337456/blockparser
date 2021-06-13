@@ -3,8 +3,8 @@ package scanner
 import (
 	"errors"
 	"fmt"
+	"github.com/af913337456/blockparser/types"
 	"math/big"
-	"src/blockparser/types"
 	"strings"
 	"sync"
 	"time"

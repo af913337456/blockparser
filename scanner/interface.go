@@ -1,8 +1,8 @@
 package scanner
 
 import (
+	"github.com/af913337456/blockparser/types"
 	"math/big"
-	"src/blockparser/types"
 )
 
 /**
@@ -17,10 +17,10 @@ import (
 type IDatabaseEngine interface {
 	GetDbLastBlock() (*types.Block, error)
 	GetDbBlockByHash(blockHash string) (*types.Block, error)
-	RecordBlock(block *types.Block,updateModel,commitAfterOpt bool) error
+	RecordBlock(block *types.Block, updateModel, commitAfterOpt bool) error
 	HandleForkEvent(info *types.BlockForkInfo) error
 	TransactionHandler(block *types.ScannerBlockInfo, dbTx interface{}, blockTxs interface{}) error
-	TxOpen() (interface{},error)
+	TxOpen() (interface{}, error)
 	TxCommit() error
 	TxRollBack() error
 	TxClose()
@@ -39,14 +39,3 @@ type ILog interface {
 	Error(args ...interface{})
 	Warn(args ...interface{})
 }
-
-
-
-
-
-
-
-
-
-
-
